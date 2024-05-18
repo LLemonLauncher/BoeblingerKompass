@@ -3,6 +3,8 @@ import 'package:boeblingerkompass/components/defaultItems.dart';
 import 'package:flutter/material.dart';
 
 // Backend ist noch nicht fertig. Deswegen funktioniert bei Email und Password nichts. Muss noch ausgebaut werden
+// Außerdem braucht es auch einee wetierleitung auf eine Register Page (noch nicht existent)
+// um rauszukommen einfach in das Passwortfeld reingehen und enter drücken.
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -11,9 +13,9 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Theme.of(context).colorScheme.background,
-        //definitely need to perhaps remove image since its not mine lol
         body: Container(
             decoration: const BoxDecoration(
+              //Das Bild ist aus dem Internet, vlt sollten wir unser eigenes machen. Zu finden in root/assets
                 image: DecorationImage(
               image: AssetImage('boeblingen.jpg'),
               fit: BoxFit.cover,
@@ -24,7 +26,7 @@ class LoginPage extends StatelessWidget {
                     children: [
                   Stack(
                     children: [
-                      // Outline text
+                      //weißer Außenrand (Macht Text besser lesbar)
                       Text(
                         "Willkommen zurück!",
                         style: TextStyle(
@@ -75,6 +77,7 @@ class LoginPage extends StatelessWidget {
                         hintText: "Passwort",
                         onSubmitted: (String value) {
                           //print(value);
+                          Navigator.pushNamed(context, '/homepage');
                         }),
                   )
                 ]))));

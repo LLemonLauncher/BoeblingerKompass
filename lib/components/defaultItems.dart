@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
 
+// hier sind alle Default  Custom Widgets drin.
+// Ich sehe momentan keinen Grund alle in separate Dateien zu packen, weil dann braucht man beim imprt nur eine einzige Datei um alles zu haben, was man braucht.
+// Außerdem müssn alle Custom widgets noch dahingehend verändert werden, dass das ColorScheme - also ob lightMode, Darkmode, oder farbiger Mode an ist berücksichtigt weredn kann.
+// Für sowas bei themes.dart vorbeischauen.
+
+
 class DefaultTextField extends StatelessWidget {
   final Function(String)? onSubmitted;
   final double width;

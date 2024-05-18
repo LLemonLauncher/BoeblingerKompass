@@ -2,6 +2,10 @@ import 'package:boeblingerkompass/components/defaultItems.dart';
 import 'package:boeblingerkompass/main.dart';
 import 'package:flutter/material.dart';
 
+//momentan ist eine vorgegebene Suchliste drin. In Zukunft soll hier natürlich von den Datenank abgerufen werden
+//momentan funktioniert die Suche auch nur, wenn man etwas eingibt und die Eingabe wieder löscht. Sollte man sich dann anschauen, wenn das Backend soweit ist.
+//Da die Karte ja nicht funktioniert, wird ein Klick auf ein Suchergebnis einen nur auf die homepage weiterleiten (mit Kartenicon selected)
+
 class MapSearchScreen extends StatefulWidget {
   const MapSearchScreen({Key? key}) : super(key: key);
   @override

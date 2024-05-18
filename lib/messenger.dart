@@ -3,6 +3,9 @@ import 'dart:async';
 
 import 'components/defaultItems.dart';
 
+//bin momentan zu unfähig einen funktionierenden Messenger zu bauen. Deswegen sehr unvollständig...
+//eigentlich soll der Messenger screen zuerst die Kontakte oder chatverläufe zeigen.
+
 class Messenger extends StatefulWidget {
   const Messenger({super.key});
 
@@ -25,34 +28,37 @@ class _MessengerState extends State<Messenger> {
         body: Column(
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
-        _buildMessageList(),
-        DefaultTextField(
-          width: 300,
-          height: 70,
-          onSubmitted: (String value) {
-            _messageStreamController.add(value);
+        //_buildMessageList(),
+        Row(
+          children: [
+            Container(
+              width: 300,
+              height: 70,
+              child: TextField(
+                onSubmitted: (String value) {
+                  _messageStreamController.add(value);
 
-            if(value == "/return") {
-              print("returned successfully");
-              Navigator.pushNamed(context, '/homepage');
-            }
-          },
+                  if (value == "/return") {
+                    //print("returned successfully");
+                    Navigator.pushNamed(context, '/homepage');
+                  }
+                },
+              ),
+            )
+          ],
         ),
       ],
     ));
   }
-
+  /*
   Widget _buildMessageList() {
     return Expanded(
-      child: StreamBuilder(
-        stream: _messageStreamController.stream,
-        builder: (context, snapshot) {
-          return ListView(
-            children: [
-              if (snapshot.hasData) Expanded(child: Text(snapshot.data.toString())),
-            ],
-          );
-        }),
-        );
+        child: StreamBuilder(
+            stream: _messageStreamController.stream,
+            builder: (context, snapshot) {
+              return ListView.builder(.....);
+            }));
   }
+  */
 }
+

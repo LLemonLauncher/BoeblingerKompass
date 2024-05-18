@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:boeblingerkompass/components/defaultItems.dart';
 
+// Ausbaufähig, funktioniert aber. Außerdem wäre eine direkte Register Route gar nicht schlecht auf der rechten Seite.
+// Wobei die Register page noch nicht existiert. aber der Rest schon.
+// in Zukundt soll diese Page on first startup angezeigt werden.
 class StartPage extends StatelessWidget {
   const StartPage({super.key});
  
