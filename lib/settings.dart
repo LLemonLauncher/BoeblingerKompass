@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'components/defaultItems.dart';
 
 // sehr unvollständig. Leitet einen Momentan nur auf die Startpage weiter.
+// weiß nicht ob wir in Zukunft das Settingsmenü hier haben wollen. Ich glaub in einem Drawermenu eäre es wahrscheinlich besser.
 
 class Settings extends StatefulWidget {
   const Settings({Key? key}) : super(key: key);

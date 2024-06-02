@@ -3,7 +3,7 @@ import 'package:boeblingerkompass/components/defaultItems.dart';
 import 'package:flutter/material.dart';
 
 // Backend ist noch nicht fertig. Deswegen funktioniert bei Email und Password nichts. Muss noch ausgebaut werden
-// Außerdem braucht es auch einee wetierleitung auf eine Register Page (noch nicht existent)
+// Außerdem braucht es auch einee weitierleitung auf eine Register Page (noch nicht existent)
 // um rauszukommen einfach in das Passwortfeld reingehen und enter drücken.
 
 class LoginPage extends StatelessWidget {

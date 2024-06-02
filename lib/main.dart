@@ -16,7 +16,7 @@ import 'package:flutter/material.dart';
 
 // Die "import 'package:boeblingerkompass/components/defaultItems.dart';" ist ziemlich wichtig für alle anderen Screens um Designelemente zu bekommen.
 // Damit wir das Design einheitlich und cohärent gestalten können, kommen in die defaultitems Datei alle Widgets rein, die wiederverwendet werden.
-// Sowas wie DefaultTextButton oder DefaultTextField sind da drin und da sollten auch zukünftige rein. Alle Widgets sollten auch immer das Präfix "Default" haben
+// Sowas wie DefaultTextButton oder DefaultTextField sind da drin und da sollten auch zukünftige rein. Alle Widgets sollten auch immer das Präfix "Default" haben-
 // 
 //
 //
@@ -50,12 +50,6 @@ void main() {
   );
 }
 
-bool isLoggedIn = true;
-
-//if(isLoggedIn) {
-//  Navigator.push(context, MaterialPageRoute(builder: (context) => const StartPage()));
-// }
-
 class HomePage extends StatefulWidget {
   //const HomePage({super.key});
 
@@ -83,6 +77,8 @@ class _HomePageState extends State<HomePage> {
 
     //wahrscheinlich ist es nicht ultra clean einen gestureDetecor als erstes zu returnen. Kann in Zukunft natürlich geändert werden, aber gerade funktionierts.
     //GestureDetector: Damit man die pages swipen kann
+    //Momentan gibt es noch keine Animationen. In Zukunft soll "DefaultL2RTransition" und "DefaultR2LTransition" benutzt werden.
+    //Aber kann sein, dass dafür der Indexed stack entfernt werden muss, oder das ganze Zeug halt anders gestaltet werden muss.
     return GestureDetector(
       
       onHorizontalDragEnd: (details) {

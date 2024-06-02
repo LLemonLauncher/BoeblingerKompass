@@ -5,13 +5,15 @@ import 'package:flutter/material.dart';
 // Außerdem müssn alle Custom widgets noch dahingehend verändert werden, dass das ColorScheme - also ob lightMode, Darkmode, oder farbiger Mode an ist berücksichtigt weredn kann.
 // Für sowas bei themes.dart vorbeischauen.
 
-
 class DefaultTextField extends StatelessWidget {
   final Function(String)? onSubmitted;
   final double width;
   final double height;
   DefaultTextField(
-      {super.key, required this.onSubmitted, this.width = 200, this.height = 50});
+      {super.key,
+      required this.onSubmitted,
+      this.width = 200,
+      this.height = 50});
 
   final Color borderColor = Color(0xFFE24040);
   final double borderRadius = 14.0;
@@ -168,8 +170,9 @@ class DefaultSearchBar extends StatelessWidget {
 }
 
 class DefaultDummySearchBar extends StatelessWidget {
-  final dynamic Function() onTap;
-  DefaultDummySearchBar({super.key, required this.onTap});
+  final String hintText;
+  final dynamic toScreen;
+  DefaultDummySearchBar({super.key, required this.toScreen, required this.hintText});
 
   @override
   Widget build(BuildContext context) {
@@ -180,13 +183,29 @@ class DefaultDummySearchBar extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 30.0),
       child: TextField(
-        onTap: onTap,
+        onTap: () {
+          Navigator.pushReplacement(
+            context,
+            PageRouteBuilder(
+              pageBuilder: (context, animation1, animation2) => toScreen,
+              transitionDuration: const Duration(seconds: 0),
+            ),
+          );
+        },
         textAlignVertical: TextAlignVertical.center,
         decoration: InputDecoration(
           isCollapsed: true,
           contentPadding: EdgeInsets.symmetric(vertical: 6.0, horizontal: 6.0),
           prefixIcon: GestureDetector(
-            onTap: onTap,
+            onTap: () {
+              Navigator.pushReplacement(
+                context,
+                PageRouteBuilder(
+                  pageBuilder: (context, animation1, animation2) => toScreen,
+                  transitionDuration: const Duration(seconds: 0),
+                ),
+              );
+            },
             child: Icon(
               Icons.search,
               size: 20,
@@ -204,7 +223,9 @@ class DefaultDummySearchBar extends StatelessWidget {
             borderRadius: BorderRadius.circular(borderRadius),
             borderSide: BorderSide(color: borderColor, width: borderWidth),
           ),
+          hintText: hintText,
         ),
+        
       ),
     );
   }
