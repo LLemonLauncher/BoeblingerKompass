@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 
-import 'components/defaultItems.dart';
-
 //bin momentan zu unfähig einen funktionierenden Messenger zu bauen. Deswegen sehr unvollständig...
 //eigentlich soll der Messenger screen zuerst die Kontakte oder chatverläufe zeigen.
 
