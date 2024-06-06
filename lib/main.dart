@@ -7,7 +7,6 @@ import 'package:boeblingerkompass/calendar.dart';
 import 'package:boeblingerkompass/map.dart';
 import 'package:boeblingerkompass/anmerkungen.dart';
 import 'package:boeblingerkompass/settings.dart';
-
 import 'package:boeblingerkompass/start_page.dart';
 import 'package:boeblingerkompass/login_page.dart';
 import 'package:boeblingerkompass/search_screen.dart';
