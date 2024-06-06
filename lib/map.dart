@@ -38,7 +38,7 @@ class _MapState extends State<Map> {
       point: LatLng(48.685014, 9.009687),
       width: 80,
       height: 80,
-      child: Icon(Icons.discord),
+      child: Icon(Icons.discord_outlined),
     ),
   ],
 ),
