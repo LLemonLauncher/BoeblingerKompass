@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 //Da die Karte ja nicht funktioniert, wird ein Klick auf ein Suchergebnis einen nur auf die homepage weiterleiten (mit Kartenicon selected)
 
 class MapSearchScreen extends StatefulWidget {
-  const MapSearchScreen({Key? key}) : super(key: key);
+  const MapSearchScreen({super.key});
   @override
   _MapSearchScreenState createState() => _MapSearchScreenState();
 }

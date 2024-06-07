@@ -1,7 +1,3 @@
-
-
-import 'package:boeblingerkompass/components/defaultItems.dart';
-
 import 'package:boeblingerkompass/messenger.dart';
 import 'package:boeblingerkompass/calendar.dart';
 import 'package:boeblingerkompass/map.dart';
@@ -50,6 +46,8 @@ void main() {
 }
 
 class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
   //const HomePage({super.key});
 
   @override

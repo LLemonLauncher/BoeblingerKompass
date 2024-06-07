@@ -12,7 +12,7 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Theme.of(context).colorScheme.background,
+        backgroundColor: Theme.of(context).colorScheme.surface,
         body: Container(
             decoration: const BoxDecoration(
               //Das Bild ist aus dem Internet, vlt sollten wir unser eigenes machen. Zu finden in root/assets

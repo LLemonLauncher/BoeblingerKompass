@@ -7,7 +7,7 @@ import 'components/defaultItems.dart';
 // Für das erste ist es aber ein guter Platzhalter
 
 class Anmerkungen extends StatefulWidget {
-  const Anmerkungen({Key? key}) : super(key: key);
+  const Anmerkungen({super.key});
 
   @override
   State<Anmerkungen> createState() => _AnmerkungenState();

@@ -15,7 +15,7 @@ class DefaultTextField extends StatelessWidget {
       this.width = 200,
       this.height = 50});
 
-  final Color borderColor = Color(0xFFE24040);
+  final Color borderColor = const Color(0xFFE24040);
   final double borderRadius = 14.0;
   final double borderWidth = 2.2;
 
@@ -25,7 +25,7 @@ class DefaultTextField extends StatelessWidget {
         width: width,
         height: height,
         child: TextField(
-          style: TextStyle(height: 1.5),
+          style: const TextStyle(height: 1.5),
           onSubmitted: onSubmitted,
           decoration: InputDecoration(
             border: OutlineInputBorder(
@@ -51,7 +51,7 @@ class DefaultSlickTextField extends StatelessWidget {
   final double height;
   final String hintText;
   final bool obscureText;
-  DefaultSlickTextField(
+  const DefaultSlickTextField(
       {super.key,
       required this.onSubmitted,
       this.width = 200,
@@ -61,7 +61,7 @@ class DefaultSlickTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
         width: width,
         height: height,
         child: TextField(
@@ -89,28 +89,28 @@ class DefaultTextButton extends StatelessWidget {
   final String text;
   DefaultTextButton({super.key, required this.onPressed, required this.text});
 
-  final Color colorNotPressed = Color.fromARGB(255, 71, 233, 233);
-  final Color colorOnPressed = Color.fromARGB(255, 0, 255, 255);
+  final Color colorNotPressed = const Color.fromARGB(255, 71, 233, 233);
+  final Color colorOnPressed = const Color.fromARGB(255, 0, 255, 255);
 
-  final Color textColorNormal = Color(0xFF000000);
+  final Color textColorNormal = const Color(0xFF000000);
 
   @override
   Widget build(BuildContext context) {
     return TextButton(
       style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.resolveWith((states) {
-          if (states.contains(MaterialState.pressed)) {
+        backgroundColor: WidgetStateProperty.resolveWith((states) {
+          if (states.contains(WidgetState.pressed)) {
             return colorOnPressed;
           }
           return colorNotPressed;
         }),
-        overlayColor: MaterialStateProperty.resolveWith((states) {
-          if (states.contains(MaterialState.pressed)) {
+        overlayColor: WidgetStateProperty.resolveWith((states) {
+          if (states.contains(WidgetState.pressed)) {
             return colorOnPressed; // Set custom ripple color here
           }
           return colorNotPressed;
         }),
-        foregroundColor: MaterialStateProperty.all(textColorNormal),
+        foregroundColor: WidgetStateProperty.all(textColorNormal),
       ),
       onPressed: onPressed,
       child: Text(text),
@@ -122,7 +122,7 @@ class DefaultSearchBar extends StatelessWidget {
   final dynamic Function() onTap;
   final dynamic Function(dynamic) onChanged;
   final dynamic focusNode;
-  DefaultSearchBar(
+  const DefaultSearchBar(
       {super.key,
       required this.onTap,
       required this.onChanged,
@@ -130,12 +130,12 @@ class DefaultSearchBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Color borderColor = Color.fromARGB(255, 63, 57, 57);
-    final double borderRadius = 30.0;
-    final double borderWidth = 1.2;
+    final Color borderColor = const Color.fromARGB(255, 63, 57, 57);
+    const double borderRadius = 30.0;
+    const double borderWidth = 1.2;
 
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 30.0),
+      margin: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 30.0),
       child: TextField(
         focusNode: focusNode,
         onTap: onTap,
@@ -143,10 +143,10 @@ class DefaultSearchBar extends StatelessWidget {
         textAlignVertical: TextAlignVertical.center,
         decoration: InputDecoration(
           isCollapsed: true,
-          contentPadding: EdgeInsets.symmetric(vertical: 6.0, horizontal: 6.0),
+          contentPadding: const EdgeInsets.symmetric(vertical: 6.0, horizontal: 6.0),
           prefixIcon: GestureDetector(
             onTap: onTap,
-            child: Icon(
+            child: const Icon(
               Icons.search,
               size: 20,
             ),
@@ -172,16 +172,17 @@ class DefaultSearchBar extends StatelessWidget {
 class DefaultDummySearchBar extends StatelessWidget {
   final String hintText;
   final dynamic toScreen;
-  DefaultDummySearchBar({super.key, required this.toScreen, required this.hintText});
+  const DefaultDummySearchBar({super.key, required this.toScreen, required this.hintText});
 
   @override
   Widget build(BuildContext context) {
-    final Color borderColor = Color.fromARGB(255, 63, 57, 57);
-    final double borderRadius = 30.0;
-    final double borderWidth = 1.2;
+    final Color borderColor = const Color.fromARGB(255, 63, 57, 57);
+    const double borderRadius = 30.0;
+    const double borderWidth = 1.2;
 
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 30.0),
+      margin: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 30.0),
+      color: Colors.transparent,
       child: TextField(
         onTap: () {
           Navigator.pushReplacement(
@@ -194,8 +195,10 @@ class DefaultDummySearchBar extends StatelessWidget {
         },
         textAlignVertical: TextAlignVertical.center,
         decoration: InputDecoration(
+          filled: true,
+          fillColor: Colors.grey[200],
           isCollapsed: true,
-          contentPadding: EdgeInsets.symmetric(vertical: 6.0, horizontal: 6.0),
+          contentPadding: const EdgeInsets.symmetric(vertical: 6.0, horizontal: 6.0),
           prefixIcon: GestureDetector(
             onTap: () {
               Navigator.pushReplacement(
@@ -206,7 +209,7 @@ class DefaultDummySearchBar extends StatelessWidget {
                 ),
               );
             },
-            child: Icon(
+            child: const Icon(
               Icons.search,
               size: 20,
             ),

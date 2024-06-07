@@ -9,7 +9,7 @@ import 'components/defaultItems.dart';
 //Bis jetzt wird der Kalender nur angezeit, man kann aber noch keine Events hinzufügen
 
 class Calendar extends StatefulWidget {
-  const Calendar({Key? key}) : super(key: key);
+  const Calendar({super.key});
 
   @override
   State<Calendar> createState() => _CalendarState();
@@ -22,7 +22,7 @@ class _CalendarState extends State<Calendar> {
       body:Column(
         
         children: [
-          DefaultDummySearchBar( toScreen: MapSearchScreen(), hintText: "Suche Events",),
+          DefaultDummySearchBar( toScreen: const MapSearchScreen(), hintText: "Suche Events",),
           Container(
             
             child: TableCalendar(focusedDay: DateTime.now(), firstDay: DateTime.utc(2024, 1, 1), lastDay: DateTime.utc(2030, 12, 31))),

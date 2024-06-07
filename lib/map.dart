@@ -5,7 +5,7 @@ import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 
 class Map extends StatefulWidget {
-  const Map({Key? key}) : super(key: key);
+  const Map({super.key});
 
   @override
   State<Map> createState() => _MapState();
@@ -17,13 +17,12 @@ class _MapState extends State<Map> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Stack(
         children: [
           // Dummysearchbar deswegen, weil ich keinen Plan hatte, wie ich den ganzen screen außer der Searchbar weiß bekomme, ohne zu viele Objekte verstecken zu müssen.
-          DefaultDummySearchBar(toScreen: MapSearchScreen(), hintText: "Suche Orte",),
           Expanded(
             child: FlutterMap(
-                options: MapOptions(
+                options: const MapOptions(
                   initialCenter: LatLng(48.685014, 9.009687),
                   initialZoom: 17.2,
                 ),
@@ -32,19 +31,25 @@ class _MapState extends State<Map> {
                     urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
                     userAgentPackageName: 'com.example.app',
                   ),
-                  MarkerLayer(
+                  const MarkerLayer(
   markers: [
     Marker(
       point: LatLng(48.685014, 9.009687),
       width: 80,
       height: 80,
-      child: Icon(Icons.discord_outlined),
+      child: Icon(Icons.discord_rounded, color: Colors.red),
     ),
   ],
 ),
                 ],
               ),
-          )
+          ),
+          Positioned(
+            top: 0.0, 
+      left: 0.0, 
+      right: 0.0,
+            child: DefaultDummySearchBar(toScreen: const MapSearchScreen(), hintText: "Suche Orte",)),
+          
             // Deshalb ist search_screen auch eine separate Page, die ohne Transition-animation onTap hier aufgerufen wird.
             // auf der anderen Page ist dann eine identisch aussehende Searchbar, die dann eiene Suchfunktion hat.
             // Bitte, wer einen smarteren Weg hat das zu lösen, kann sehr gerne Vorschläge geben. Funktionieren tut es momentan aber soweit.

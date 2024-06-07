@@ -7,6 +7,7 @@ import 'dart:async';
 class Messenger extends StatefulWidget {
   const Messenger({super.key});
 
+  @override
   _MessengerState createState() => _MessengerState();
 }
 
@@ -29,7 +30,7 @@ class _MessengerState extends State<Messenger> {
         //_buildMessageList(),
         Row(
           children: [
-            Container(
+            SizedBox(
               width: 300,
               height: 70,
               child: TextField(
