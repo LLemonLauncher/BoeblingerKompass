@@ -1,0 +1,10 @@
+services:
+  node:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: boeblingen_app_node
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./src:/app/src
