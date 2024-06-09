@@ -1,10 +1,18 @@
 services:
-  node:
+  frontend:
+    build:
+      context: .
+      dockerfile: Frontend_Dockerfile
+    container_name: boeblingen_app_frontend_build
+    volumes:
+      - ./client:/app/build/web
+  backend:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: boeblingen_app_node
+    container_name: boeblingen_app_backend
     ports:
       - "3000:3000"
     volumes:
       - ./src:/app/src
+      - ./client:/app/client
