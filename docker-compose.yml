@@ -1,18 +1,16 @@
 services:
   frontend:
+    image: flutter_sdk
     build:
       context: .
-      dockerfile: Frontend_Dockerfile
-    container_name: boeblingen_app_frontend_build
-    volumes:
-      - ./client:/app/build/web
+      dockerfile: FlutterDockerfile
+    container_name: flutter_sdk
   backend:
     build:
       context: .
       dockerfile: Dockerfile
     container_name: boeblingen_app_backend
+    depends_on:
+      - frontend
     ports:
       - "3000:3000"
-    volumes:
-      - ./src:/app/src
-      - ./client:/app/client
